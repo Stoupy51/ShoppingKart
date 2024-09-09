@@ -61,6 +61,7 @@ execute if score #model shopping_kart.data matches 49 run summon axolotl ~ ~ ~ {
 execute if score #model shopping_kart.data matches 50 run summon axolotl ~ ~ ~ {Tags:["shopping_kart.new_kart"],Variant:4}
 execute if score #model shopping_kart.data matches 51 run summon sniffer ~ ~ ~ {Tags:["shopping_kart.new_kart"]}
 execute if score #model shopping_kart.data matches 52 run summon sniffer ~ ~ ~ {Tags:["shopping_kart.new_kart"],Age:-1000000}
+execute if score #model shopping_kart.data matches 53 run summon armadillo ~ ~ ~ {Tags:["shopping_kart.new_kart"]}
 
 # Apply init functions to new kart
 execute as @e[tag=shopping_kart.new_kart] at @s run function shopping_kart:kart/switch_model/init_functions

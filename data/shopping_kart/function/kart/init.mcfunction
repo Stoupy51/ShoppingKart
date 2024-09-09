@@ -3,7 +3,10 @@
 tag @s add shopping_kart.kart
 data modify entity @s Silent set value 1b
 execute unless score #is_vulnerable shopping_kart.data matches 1 run data modify entity @s Invulnerable set value 1b
-data modify entity @s DeathLootTable set value "none"
+data modify entity @s DeathLootTable set value "empty"
+
+# Attribute step height to player default (0.6)
+attribute @s generic.step_height base set 0.6
 
 # Can Fly tag
 execute if score #can_fly shopping_kart.data matches 1 run tag @s add shopping_kart.can_fly

@@ -8,7 +8,7 @@ execute if score #model shopping_kart.data matches 1 run data modify entity @s t
 
 # Scoreboard + Model
 scoreboard players operation @s shopping_kart.id = #next_id shopping_kart.id
-item replace entity @s container.0 with golden_hoe{CustomModelData:2010000}
+item replace entity @s container.0 with golden_hoe[custom_model_data=2010000]
 
 # Ride the kart
 ride @s mount @e[tag=shopping_kart.current_kart,sort=nearest,limit=1]
