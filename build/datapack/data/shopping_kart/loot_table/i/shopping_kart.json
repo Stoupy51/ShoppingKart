@@ -1,0 +1,30 @@
+{
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:command_block",
+					"functions": [
+						{
+							"function": "minecraft:set_components",
+							"components": {
+								"minecraft:item_model": "shopping_kart:shopping_kart",
+								"minecraft:item_name": "{\"text\": \"Shopping Kart\", \"italic\": false, \"color\": \"white\"}",
+								"minecraft:lore": [
+									"[\"\", {\"text\": \"I\", \"color\": \"white\", \"italic\": false, \"font\": \"shopping_kart:icons\"}, {\"text\": \" ShoppingKart\", \"italic\": true, \"color\": \"blue\"}]"
+								],
+								"minecraft:custom_data": {
+									"shopping_kart": {"shopping_kart": true},
+									"smithed": {"ignore": {"functionality": true,"crafting": true}}
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}
+
