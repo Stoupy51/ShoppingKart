@@ -11,7 +11,7 @@ def main(config: dict) -> None:
 	ns: str = config["namespace"]
 	write_to_tick_file(config, f"""
 # Detect if a player is moving
-execute as @a[gamemode=!spectator,predicate={ns}:has_kart_vehicle,nbt=!{{Motion:[0.00d,0.00d,0.00d]}}] at @s run function {ns}:kart/player_moving
+execute as @a[gamemode=!spectator,predicate={ns}:has_kart_vehicle,predicate={ns}:input/any] at @s run function {ns}:kart/player_moving
 
 # Kart ticking
 execute as @e[tag={ns}.kart] at @s run function {ns}:kart/tick/
@@ -70,5 +70,6 @@ scoreboard players set #100 {ns}.data 100
 scoreboard players set #120 {ns}.data 120
 scoreboard players set #1000 {ns}.data 1000
 scoreboard players set #10000 {ns}.data 10000
+scoreboard players set #14142 {ns}.data 14142
 """)
 

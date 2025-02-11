@@ -1,9 +1,12 @@
 
 tag @s add shopping_kart.temp
 
-# Store player motion and call function to the vehicle
-execute store result score #motion_x shopping_kart.data run data get entity @s Motion[0] 1000000
-execute store result score #motion_z shopping_kart.data run data get entity @s Motion[2] 1000000
+# Store player motion and call function to the vehicle (Old code < 1.21)
+# execute store result score #motion_x shopping_kart.data run data get entity @s Motion[0] 1000000
+# execute store result score #motion_z shopping_kart.data run data get entity @s Motion[2] 1000000
+
+# Store player motion and call function to the vehicle (New code >= 1.21)
+function shopping_kart:kart/motion_from_input
 
 data modify storage shopping_kart:main Rotation set from entity @s Rotation
 scoreboard players set #instant_engine_max shopping_kart.data 0

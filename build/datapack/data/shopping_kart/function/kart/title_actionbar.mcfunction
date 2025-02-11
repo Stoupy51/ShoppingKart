@@ -29,7 +29,7 @@ scoreboard players operation @s shopping_kart.old_pos_z /= #1000 shopping_kart.d
 scoreboard players operation #t_engine shopping_kart.data = @s shopping_kart.engine
 scoreboard players operation #t_first_digits shopping_kart.data = @s shopping_kart.old_pos_x
 scoreboard players operation #t_second_digits shopping_kart.data = @s shopping_kart.old_pos_z
-execute on passengers run title @s actionbar [{"text":"Moteur : ","color":"yellow"},{"score":{"name":"#t_engine","objective":"shopping_kart.data"},"color":"aqua"},{"text":" tr/min | Vitesse : "},{"score":{"name":"#t_first_digits","objective":"shopping_kart.data"},"color":"aqua"},{"text":","},{"score":{"name":"#t_second_digits","objective":"shopping_kart.data"},"color":"aqua"},{"text":" blocks/s "}]
+execute on passengers run title @s actionbar [{"text":"Engine: ","color":"yellow"},{"score":{"name":"#t_engine","objective":"shopping_kart.data"},"color":"aqua"},{"text":" rpm | Speed: "},{"score":{"name":"#t_first_digits","objective":"shopping_kart.data"},"color":"aqua"},{"text":","},{"score":{"name":"#t_second_digits","objective":"shopping_kart.data"},"color":"aqua"},{"text":" blocks/s "}]
 
 # Reset the old position
 scoreboard players operation @s shopping_kart.old_pos_x = #new_pos_x shopping_kart.data

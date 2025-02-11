@@ -57,4 +57,5 @@ scoreboard players set #100 shopping_kart.data 100
 scoreboard players set #120 shopping_kart.data 120
 scoreboard players set #1000 shopping_kart.data 1000
 scoreboard players set #10000 shopping_kart.data 10000
+scoreboard players set #14142 shopping_kart.data 14142
 

@@ -57,4 +57,6 @@ execute store result storage shopping_kart:main Motion[0] double 0.0000001 run s
 execute store result storage shopping_kart:main Motion[2] double 0.0000001 run scoreboard players get #new_motion_z shopping_kart.data
 scoreboard players set #motion_x shopping_kart.data 0
 scoreboard players set #motion_z shopping_kart.data 0
+# tellraw @a {"score":{"name":"#new_motion_x","objective":"shopping_kart.data"},"color":"red"}
+# tellraw @a {"score":{"name":"#new_motion_z","objective":"shopping_kart.data"},"color":"blue"}
 
