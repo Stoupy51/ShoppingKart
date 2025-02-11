@@ -31,7 +31,6 @@ Control how the kart behaves on different surfaces with [block tags](./merge/dat
 
 ### Special Features 🌟
 - 🏎️ **Boosters**: Drive over magenta glazed terracotta for a speed boost!
-- 🔄 **Drifting**: Hold A/D while moving to drift
 - 🚀 **Reactor Boost**: Special power-up for temporary speed boost
 - and more taken from Trackmania
 
