@@ -12,6 +12,7 @@ BUILD_COPY_DESTINATIONS: tuple[list, list] = (["D:/latest_snapshot/world/datapac
 
 # Dev constants
 DATABASE_DEBUG: str = f"{ROOT}/database_debug.json"	# Dump of the database for debugging purposes
+ENABLE_TRANSLATIONS: bool = False					# Will convert all the text components to translate and generate a lang file in the resource pack. Meaning you can easily translate the datapack in multiple languages!
 
 
 # Datapack related constants
@@ -35,6 +36,7 @@ configuration = {
 	"build_copy_destinations": BUILD_COPY_DESTINATIONS,
 
 	"database_debug": DATABASE_DEBUG,
+	"enable_translations": ENABLE_TRANSLATIONS,
 
 	"author": AUTHOR,
 	"project_name": PROJECT_NAME,
