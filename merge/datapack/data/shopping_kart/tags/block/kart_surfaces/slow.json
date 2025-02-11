@@ -1,10 +1,22 @@
 {
 	"values": [
 		"dirt",
+		"coarse_dirt",
 		"rooted_dirt",
+		"farmland",
+		"grass_block",
+		"mycelium",
+		"podzol",
 		"sand",
 		"red_sand",
+		"gravel",
+		"clay",
 		"snow_block",
-		"snow"
+		"snow",
+		"soul_soil",
+		"moss_block",
+		"suspicious_sand",
+		"suspicious_gravel"
 	]
 }
+

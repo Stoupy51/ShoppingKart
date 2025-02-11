@@ -10,7 +10,7 @@ scoreboard players set #motion_z shopping_kart.data 0
 # Add motion depending on input
 scoreboard players set #added shopping_kart.data 0
 execute if predicate shopping_kart:input/forward rotated ~ 0 positioned 0 0 0 positioned ^ ^ ^10000 summon marker run function shopping_kart:kart/add_motion_from_marker_pos
-execute if predicate shopping_kart:input/backward rotated ~ 0 positioned 0 0 0 positioned ^ ^ ^-11000 summon marker run function shopping_kart:kart/add_motion_from_marker_pos
+execute if predicate shopping_kart:input/backward rotated ~ 0 positioned 0 0 0 positioned ^ ^ ^-10500 summon marker run function shopping_kart:kart/add_motion_from_marker_pos
 execute if predicate shopping_kart:input/right rotated ~ 0 positioned 0 0 0 positioned ^-10000 ^ ^ summon marker run function shopping_kart:kart/add_motion_from_marker_pos
 execute if predicate shopping_kart:input/left rotated ~ 0 positioned 0 0 0 positioned ^10000 ^ ^ summon marker run function shopping_kart:kart/add_motion_from_marker_pos
 
