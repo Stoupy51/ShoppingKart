@@ -1,7 +1,7 @@
 
-#> shopping_kart:v1.3.0/tick
+#> shopping_kart:v1.3.1/tick
 #
-# @within	shopping_kart:v1.3.0/load/tick_verification
+# @within	shopping_kart:v1.3.1/load/tick_verification
 #
 
 # Detect if a player is moving

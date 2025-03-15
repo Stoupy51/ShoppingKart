@@ -54,7 +54,7 @@ execute if score #model shopping_kart.data matches 37 run summon sheep ~ ~ ~ {Ta
 execute if score #model shopping_kart.data matches 38 run summon sheep ~ ~ ~ {Tags:["shopping_kart.new_kart"],Color:13}
 execute if score #model shopping_kart.data matches 39 run summon sheep ~ ~ ~ {Tags:["shopping_kart.new_kart"],Color:14}
 execute if score #model shopping_kart.data matches 40 run summon sheep ~ ~ ~ {Tags:["shopping_kart.new_kart"],Color:15}
-execute if score #model shopping_kart.data matches 41 run summon sheep ~ ~ ~ {Tags:["shopping_kart.new_kart"],CustomName:'{"text":"jeb_"}'}
+execute if score #model shopping_kart.data matches 41 run summon sheep ~ ~ ~ {Tags:["shopping_kart.new_kart"],CustomName:"jeb_"}
 execute if score #model shopping_kart.data matches 42 run summon cow ~ ~ ~ {Tags:["shopping_kart.new_kart"]}
 execute if score #model shopping_kart.data matches 43 run summon mooshroom ~ ~ ~ {Tags:["shopping_kart.new_kart"],Type:"red"}
 execute if score #model shopping_kart.data matches 44 run summon mooshroom ~ ~ ~ {Tags:["shopping_kart.new_kart"],Type:"brown"}
