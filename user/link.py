@@ -1,10 +1,8 @@
 
 # Imports
 from python_datapack.constants import *
-from python_datapack.utils.print import *
 from python_datapack.utils.io import *
 from config import *
-import requests
 
 # Main function is run just before making finalyzing the build process (zip, headers, lang, ...)
 def main(config: dict) -> None:
@@ -55,7 +53,7 @@ scoreboard players set #default_max_engine {ns}.data 1500
 
 ## Setup tellraw prefix
 # tellraw @a ["\\n",{{"nbt":"ShoppingKart","storage":"{ns}:main","interpret":true}},{{"text":" Souhaitez tous la bienvenue à "}},{{"selector":"@s","color":"aqua"}},{{"text":" !\\nIl est le "}},{{"score":{{"name":"#next_id","objective":"switch.data"}},"color":"aqua"}},{{"text":"ème joueur a rejoindre !"}}]
-data modify storage {ns}:main ShoppingKart set value '[{{"text":"[ShoppingKart]","color":"green"}}]'
+data modify storage {ns}:main ShoppingKart set value [{{"text":"[ShoppingKart]","color":"green"}}]
 
 scoreboard players set #-1 {ns}.data -1
 scoreboard players set #2 {ns}.data 2
