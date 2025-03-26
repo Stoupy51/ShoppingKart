@@ -1,7 +1,7 @@
 
 #> shopping_kart:kart/player_moving
 #
-# @within	shopping_kart:v1.3.1/tick
+# @within	shopping_kart:v1.3.2/tick
 #
 
 tag @s add shopping_kart.temp

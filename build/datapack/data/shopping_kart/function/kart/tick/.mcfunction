@@ -1,7 +1,7 @@
 
 #> shopping_kart:kart/tick/
 #
-# @within	shopping_kart:v1.3.1/tick
+# @within	shopping_kart:v1.3.2/tick
 #
 
 # Slow down, Speed up engine, refresh booster timer

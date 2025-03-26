@@ -7,7 +7,7 @@ from config import *
 # Main function is run just before making finalyzing the build process (zip, headers, lang, ...)
 def main(config: dict) -> None:
 	ns: str = config["namespace"]
-	write_to_tick_file(config, f"""
+	write_tick_file(config, f"""
 # Detect if a player is moving
 execute as @a[gamemode=!spectator,predicate={ns}:has_kart_vehicle,predicate={ns}:input/any] at @s run function {ns}:kart/player_moving
 
@@ -22,7 +22,7 @@ scoreboard players enable @a {ns}.trigger_model
 execute as @a unless score @s {ns}.trigger_model matches 0 at @s run function {ns}:kart/switch_model/trigger
 """)
 
-	write_to_load_file(config, f"""
+	write_load_file(config, f"""
 scoreboard objectives add {ns}.data dummy
 scoreboard objectives add {ns}.id dummy
 scoreboard objectives add {ns}.engine dummy
