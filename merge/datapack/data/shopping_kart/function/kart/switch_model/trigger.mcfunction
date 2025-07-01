@@ -23,8 +23,8 @@ scoreboard players add #temp shopping_kart.current_model 1
 tellraw @s ["",{"nbt":"ShoppingKart","storage":"shopping_kart:main","interpret":true},{"text":" Current Model: ","color":"dark_green"},{"score":{"name":"#temp","objective":"shopping_kart.current_model"},"color":"green"},{"text":"/","color":"dark_green"},{"text":"56","color":"green"}]
 
 ## Change current vehicle
-execute if score @s shopping_kart.trigger_model matches -2.. run function shopping_kart:kart/switch_model/
-execute if score @s shopping_kart.trigger_model matches -4 run function shopping_kart:kart/switch_model/
+execute if score @s shopping_kart.trigger_model matches -2.. run function shopping_kart:kart/switch_model/main
+execute if score @s shopping_kart.trigger_model matches -4 run function shopping_kart:kart/switch_model/main
 
 ## Reset trigger value
 scoreboard players reset @s shopping_kart.trigger_model

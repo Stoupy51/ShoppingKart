@@ -8,7 +8,7 @@
 execute as @a[gamemode=!spectator,predicate=shopping_kart:has_kart_vehicle,predicate=shopping_kart:input/any] at @s run function shopping_kart:kart/player_moving
 
 # Kart ticking
-execute as @e[tag=shopping_kart.kart] at @s run function shopping_kart:kart/tick/
+execute as @e[tag=shopping_kart.kart] at @s run function shopping_kart:kart/tick/main
 
 # Kart visual
 execute as @e[tag=shopping_kart.kart_visual] run function shopping_kart:kart/tick/visual

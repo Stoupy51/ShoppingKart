@@ -1,0 +1,5 @@
+{
+	"pools": [
+		{"rolls": 1,"entries": [{"type": "minecraft:loot_table","value": "shopping_kart:i/shopping_kart"}]}
+	]
+}

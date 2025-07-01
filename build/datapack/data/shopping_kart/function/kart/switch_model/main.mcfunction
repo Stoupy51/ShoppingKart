@@ -1,5 +1,5 @@
 
-#> shopping_kart:kart/switch_model/
+#> shopping_kart:kart/switch_model/main
 #
 # @within	shopping_kart:kart/switch_model/trigger
 #

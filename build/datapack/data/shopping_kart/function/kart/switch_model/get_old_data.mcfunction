@@ -1,7 +1,7 @@
 
 #> shopping_kart:kart/switch_model/get_old_data
 #
-# @within	shopping_kart:kart/switch_model/
+# @within	shopping_kart:kart/switch_model/main
 #
 
 # Indicate that the vehicle data have been retrieved

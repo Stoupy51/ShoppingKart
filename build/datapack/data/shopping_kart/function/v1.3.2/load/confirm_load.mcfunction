@@ -41,7 +41,6 @@ scoreboard players set #default_max_engine shopping_kart.data 1500
 #define score_holder #pos
 
 ## Setup tellraw prefix
-# tellraw @a ["\n",{"nbt":"ShoppingKart","storage":"shopping_kart:main","interpret":true},{"text":" Souhaitez tous la bienvenue à "},{"selector":"@s","color":"aqua"},{"text":" !\nIl est le "},{"score":{"name":"#next_id","objective":"switch.data"},"color":"aqua"},{"text":"ème joueur a rejoindre !"}]
 data modify storage shopping_kart:main ShoppingKart set value [{"text":"[ShoppingKart]","color":"green"}]
 
 scoreboard players set #-1 shopping_kart.data -1

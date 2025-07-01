@@ -2,7 +2,7 @@
 # Shopping Kart
 [![GitHub](https://img.shields.io/github/v/release/Stoupy51/ShoppingKart?logo=github&label=GitHub)](https://github.com/Stoupy51/ShoppingKart/releases/latest)
 [![Discord](https://img.shields.io/discord/1216400498488377467?label=Discord&logo=discord)](https://discord.gg/anxzu6rA9F)
-[![Python Datapack](https://img.shields.io/github/v/release/Stoupy51/python_datapack?logo=github&label=Python%20Datapack)](https://github.com/Stoupy51/PythonDatapackTemplate)
+[![StewBeet](https://img.shields.io/github/v/release/Stoupy51/StewBeet?logo=github&label=StewBeet)](https://github.com/Stoupy51/StewBeet)
 
 🛒 Shopping Kart is a datapack that lets you ride various vehicles in Minecraft, it is not intended to be used in a survival server but rather in a minigame or a custom server.
 

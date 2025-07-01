@@ -1,8 +1,8 @@
 
 #> shopping_kart:kart/called_by_player
 #
-# @within	shopping_kart:kart/player_moving
-#			shopping_kart:kart/effects/forced_acceleration
+# @within	shopping_kart:kart/effects/forced_acceleration
+#			shopping_kart:kart/player_moving
 #
 
 tag @s add shopping_kart.speed_up

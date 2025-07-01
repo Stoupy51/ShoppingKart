@@ -1,7 +1,7 @@
 
 #> shopping_kart:kart/effects/speed_down
 #
-# @within	shopping_kart:kart/tick/
+# @within	shopping_kart:kart/tick/main
 #
 
 # Slow down engine 28 per tick

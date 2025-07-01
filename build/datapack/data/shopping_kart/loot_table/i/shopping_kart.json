@@ -17,11 +17,19 @@
 									"color": "white"
 								},
 								"minecraft:lore": [
-									["",{"text": "I","color": "white","italic": false,"font": "shopping_kart:icons"},{"text": " ShoppingKart","italic": true,"color": "blue"}]
+									[
+										"",
+										{"text": "I","color": "white","italic": false,"font": "shopping_kart:icons"},
+										{"text": " ShoppingKart","italic": true,"color": "blue"}
+									]
 								],
 								"minecraft:custom_data": {
-									"shopping_kart": {"shopping_kart": true},
-									"smithed": {"ignore": {"functionality": true,"crafting": true}}
+									"shopping_kart": {
+										"shopping_kart": true
+									},
+									"smithed": {
+										"ignore": {"functionality": true,"crafting": true}
+									}
 								}
 							}
 						}
@@ -31,4 +39,3 @@
 		}
 	]
 }
-

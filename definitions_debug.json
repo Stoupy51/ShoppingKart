@@ -1,0 +1,9 @@
+{
+	"shopping_kart": {
+		"id": "minecraft:command_block",
+		"item_model": "shopping_kart:shopping_kart",
+		"item_name": {"text": "Shopping Kart","italic": false,"color": "white"},
+		"lore": [["",{"text": "I","color": "white","italic": false,"font": "shopping_kart:icons"},{"text": " ShoppingKart","italic": true,"color": "blue"}]],
+		"custom_data": {"shopping_kart": {"shopping_kart": true},"smithed": {"ignore": {"functionality": true,"crafting": true}}}
+	}
+}

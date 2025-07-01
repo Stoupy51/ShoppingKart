@@ -1,18 +1,18 @@
 
 # Imports
-from python_datapack.constants import *
-from python_datapack.utils.io import *
-from config import *
+from stewbeet import Context, write_load_file, write_tick_file
+
 
 # Main function is run just before making finalyzing the build process (zip, headers, lang, ...)
-def main(config: dict) -> None:
-	ns: str = config["namespace"]
-	write_tick_file(config, f"""
+def beet_default(ctx: Context) -> None:
+	ns: str = ctx.project_id
+
+	write_tick_file(f"""
 # Detect if a player is moving
 execute as @a[gamemode=!spectator,predicate={ns}:has_kart_vehicle,predicate={ns}:input/any] at @s run function {ns}:kart/player_moving
 
 # Kart ticking
-execute as @e[tag={ns}.kart] at @s run function {ns}:kart/tick/
+execute as @e[tag={ns}.kart] at @s run function {ns}:kart/tick/main
 
 # Kart visual
 execute as @e[tag={ns}.kart_visual] run function {ns}:kart/tick/visual
@@ -22,7 +22,7 @@ scoreboard players enable @a {ns}.trigger_model
 execute as @a unless score @s {ns}.trigger_model matches 0 at @s run function {ns}:kart/switch_model/trigger
 """)
 
-	write_load_file(config, f"""
+	write_load_file(f"""
 scoreboard objectives add {ns}.data dummy
 scoreboard objectives add {ns}.id dummy
 scoreboard objectives add {ns}.engine dummy
@@ -52,7 +52,6 @@ scoreboard players set #default_max_engine {ns}.data 1500
 #define score_holder #pos
 
 ## Setup tellraw prefix
-# tellraw @a ["\\n",{{"nbt":"ShoppingKart","storage":"{ns}:main","interpret":true}},{{"text":" Souhaitez tous la bienvenue à "}},{{"selector":"@s","color":"aqua"}},{{"text":" !\\nIl est le "}},{{"score":{{"name":"#next_id","objective":"switch.data"}},"color":"aqua"}},{{"text":"ème joueur a rejoindre !"}}]
 data modify storage {ns}:main ShoppingKart set value [{{"text":"[ShoppingKart]","color":"green"}}]
 
 scoreboard players set #-1 {ns}.data -1

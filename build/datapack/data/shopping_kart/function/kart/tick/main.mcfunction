@@ -1,5 +1,5 @@
 
-#> shopping_kart:kart/tick/
+#> shopping_kart:kart/tick/main
 #
 # @within	shopping_kart:v1.3.2/tick
 #

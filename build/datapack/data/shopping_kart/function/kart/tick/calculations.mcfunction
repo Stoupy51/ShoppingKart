@@ -2,7 +2,7 @@
 #> shopping_kart:kart/tick/calculations
 #
 # @within	shopping_kart:kart/called_by_player
-#			shopping_kart:kart/tick/
+#			shopping_kart:kart/tick/main
 #
 
 tag @s add shopping_kart.temp

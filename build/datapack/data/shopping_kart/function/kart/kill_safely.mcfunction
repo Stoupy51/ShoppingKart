@@ -1,7 +1,7 @@
 
 #> shopping_kart:kart/kill_safely
 #
-# @within	shopping_kart:kart/switch_model/
+# @within	shopping_kart:kart/switch_model/main
 #
 
 # Unride passengers

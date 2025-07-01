@@ -1,7 +1,7 @@
 
 #> shopping_kart:kart/effects/speed_up
 #
-# @within	shopping_kart:kart/tick/
+# @within	shopping_kart:kart/tick/main
 #
 
 ## Speed up engine progressively depending on surface

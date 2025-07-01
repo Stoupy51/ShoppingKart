@@ -11,4 +11,3 @@ scoreboard players operation #motion_x shopping_kart.data /= #14142 shopping_kar
 scoreboard players operation #motion_z shopping_kart.data *= #10000 shopping_kart.data
 scoreboard players operation #motion_z shopping_kart.data /= #14142 shopping_kart.data
 
-
