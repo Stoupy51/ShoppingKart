@@ -1,11 +1,11 @@
 
-#> shopping_kart:v1.3.2/load/confirm_load
+#> shopping_kart:v1.3.3/load/confirm_load
 #
-# @within	shopping_kart:v1.3.2/load/secondary
+# @within	shopping_kart:v1.3.3/load/secondary
 #
 
 # Confirm load
-tellraw @a[tag=convention.debug] {"text":"[Loaded ShoppingKart v1.3.2]","color":"green"}
+tellraw @a[tag=convention.debug] {"text":"[Loaded ShoppingKart v1.3.3]","color":"green"}
 scoreboard players set #shopping_kart.loaded load.status 1
 
 # Items storage
