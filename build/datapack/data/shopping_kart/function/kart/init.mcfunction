@@ -1,8 +1,9 @@
 
 #> shopping_kart:kart/init
 #
-# @within	shopping_kart:kart/summon
-#			shopping_kart:kart/switch_model/init_functions
+# @executed	at @s
+#
+# @within	shopping_kart:kart/switch_model/init_functions
 #
 
 # Add kart nbt
