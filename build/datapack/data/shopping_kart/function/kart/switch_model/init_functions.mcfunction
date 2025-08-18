@@ -1,7 +1,9 @@
 
 #> shopping_kart:kart/switch_model/init_functions
 #
-# @within	shopping_kart:kart/switch_model/summon_new_kart
+# @executed	at @s
+#
+# @within	shopping_kart:kart/switch_model/summon_new_kart [ at @s ]
 #
 
 # Run default init function

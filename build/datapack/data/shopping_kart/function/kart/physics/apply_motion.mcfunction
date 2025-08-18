@@ -1,6 +1,8 @@
 
 #> shopping_kart:kart/physics/apply_motion
 #
+# @executed	at @s
+#
 # @within	shopping_kart:kart/tick/calculations
 #
 

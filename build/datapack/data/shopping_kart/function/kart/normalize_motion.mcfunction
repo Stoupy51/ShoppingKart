@@ -1,6 +1,8 @@
 
 #> shopping_kart:kart/normalize_motion
 #
+# @executed	as @a[gamemode=!spectator,predicate=...] & at @s
+#
 # @within	shopping_kart:kart/motion_from_input
 #
 

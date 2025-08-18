@@ -1,6 +1,8 @@
 
 #> shopping_kart:kart/motion_from_input
 #
+# @executed	as @a[gamemode=!spectator,predicate=...] & at @s
+#
 # @within	shopping_kart:kart/player_moving
 #
 

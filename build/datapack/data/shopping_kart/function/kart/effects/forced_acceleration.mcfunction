@@ -1,6 +1,8 @@
 
 #> shopping_kart:kart/effects/forced_acceleration
 #
+# @executed	at @s
+#
 # @within	shopping_kart:kart/tick/main
 #
 

@@ -1,16 +1,16 @@
 
-#> shopping_kart:v1.3.3/load/confirm_load
+#> shopping_kart:v1.3.4/load/confirm_load
 #
-# @within	shopping_kart:v1.3.3/load/secondary
+# @within	shopping_kart:v1.3.4/load/secondary
 #
 
 # Confirm load
-tellraw @a[tag=convention.debug] {"text":"[Loaded ShoppingKart v1.3.3]","color":"green"}
+tellraw @a[tag=convention.debug] {"text":"[Loaded ShoppingKart v1.3.4]","color":"green"}
 scoreboard players set #shopping_kart.loaded load.status 1
 
 # Items storage
 data modify storage shopping_kart:items all set value {}
-data modify storage shopping_kart:items all.shopping_kart set value {"id": "minecraft:command_block","count": 1,"components": {"minecraft:item_model": "shopping_kart:shopping_kart","minecraft:item_name": {"text": "Shopping Kart","italic": false,"color": "white"},"minecraft:lore": [["",{"text": "I","color": "white","italic": false,"font": "shopping_kart:icons"},{"text": " ShoppingKart","italic": true,"color": "blue"}]],"minecraft:custom_data": {"shopping_kart": {"shopping_kart": true},"smithed": {"ignore": {"functionality": true,"crafting": true}}}}}
+data modify storage shopping_kart:items all.shopping_kart set value {"id": "minecraft:command_block","count": 1,"components": {"minecraft:item_model": "shopping_kart:shopping_kart","minecraft:item_name": {"text": "Shopping Kart"},"minecraft:lore": [["",{"text": "I","color": "white","italic": false,"font": "shopping_kart:icons"},{"text": " ShoppingKart","italic": true,"color": "blue"}]],"minecraft:custom_data": {"shopping_kart": {"shopping_kart": true},"smithed": {"ignore": {"functionality": true,"crafting": true}}}}}
 
 scoreboard objectives add shopping_kart.data dummy
 scoreboard objectives add shopping_kart.id dummy

@@ -1,6 +1,8 @@
 
 #> shopping_kart:kart/physics/check_predictions
 #
+# @executed	at @s
+#
 # @within	shopping_kart:kart/physics/calculation
 #
 

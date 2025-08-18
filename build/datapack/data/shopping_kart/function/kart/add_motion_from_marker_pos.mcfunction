@@ -1,7 +1,12 @@
 
 #> shopping_kart:kart/add_motion_from_marker_pos
 #
-# @within	shopping_kart:kart/motion_from_input
+# @executed	rotated ~ 0 & positioned 0 0 0 & positioned ^ ^ ^10000
+#
+# @within	shopping_kart:kart/motion_from_input [ rotated ~ 0 & positioned 0 0 0 & positioned ^ ^ ^10000 ]
+#			shopping_kart:kart/motion_from_input [ rotated ~ 0 & positioned 0 0 0 & positioned ^ ^ ^-10500 ]
+#			shopping_kart:kart/motion_from_input [ rotated ~ 0 & positioned 0 0 0 & positioned ^-10000 ^ ^ ]
+#			shopping_kart:kart/motion_from_input [ rotated ~ 0 & positioned 0 0 0 & positioned ^10000 ^ ^ ]
 #
 
 # Collect marker position

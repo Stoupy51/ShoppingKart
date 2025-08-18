@@ -1,6 +1,8 @@
 
 #> shopping_kart:kart/effects/no_steering
 #
+# @executed	at @s
+#
 # @within	shopping_kart:kart/called_by_player
 #
 

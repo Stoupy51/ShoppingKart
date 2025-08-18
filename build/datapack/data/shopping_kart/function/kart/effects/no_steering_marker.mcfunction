@@ -1,8 +1,10 @@
 
 #> shopping_kart:kart/effects/no_steering_marker
 #
-# @within	shopping_kart:kart/effects/forced_acceleration
-#			shopping_kart:kart/effects/no_steering
+# @executed	positioned 0 0 0
+#
+# @within	shopping_kart:kart/effects/forced_acceleration [ positioned 0 0 0 ]
+#			shopping_kart:kart/effects/no_steering [ positioned 0 0 0 ]
 #
 
 data modify entity @s Rotation[0] set from storage shopping_kart:main Rotation[0]

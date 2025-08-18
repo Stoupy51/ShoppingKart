@@ -1,7 +1,9 @@
 
 #> shopping_kart:kart/player_moving
 #
-# @within	shopping_kart:v1.3.3/tick
+# @executed	as @a[gamemode=!spectator,predicate=...] & at @s
+#
+# @within	shopping_kart:v1.3.4/tick [ as @a[gamemode=!spectator,predicate=...] & at @s ]
 #
 
 tag @s add shopping_kart.temp

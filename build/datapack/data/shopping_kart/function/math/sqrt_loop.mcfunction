@@ -1,6 +1,8 @@
 
 #> shopping_kart:math/sqrt_loop
 #
+# @executed	at @s
+#
 # @within	shopping_kart:math/sqrt
 #			shopping_kart:math/sqrt_loop
 #

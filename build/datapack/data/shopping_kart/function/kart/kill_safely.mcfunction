@@ -1,6 +1,8 @@
 
 #> shopping_kart:kart/kill_safely
 #
+# @executed	as @a & at @s
+#
 # @within	shopping_kart:kart/switch_model/main
 #
 

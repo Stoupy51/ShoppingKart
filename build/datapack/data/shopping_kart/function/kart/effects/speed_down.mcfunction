@@ -1,6 +1,8 @@
 
 #> shopping_kart:kart/effects/speed_down
 #
+# @executed	at @s
+#
 # @within	shopping_kart:kart/tick/main
 #
 

@@ -1,7 +1,9 @@
 
 #> shopping_kart:kart/switch_model/trigger
 #
-# @within	shopping_kart:v1.3.3/tick
+# @executed	as @a & at @s
+#
+# @within	shopping_kart:v1.3.4/tick [ as @a & at @s ]
 #
 
 ## Manage trigger value

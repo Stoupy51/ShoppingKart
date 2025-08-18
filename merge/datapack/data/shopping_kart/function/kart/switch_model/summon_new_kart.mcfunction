@@ -1,3 +1,4 @@
+
 # Tag the current player to ride the new kart
 tag @s add shopping_kart.owner
 

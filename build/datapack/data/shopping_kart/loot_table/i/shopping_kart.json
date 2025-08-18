@@ -12,9 +12,7 @@
 							"components": {
 								"minecraft:item_model": "shopping_kart:shopping_kart",
 								"minecraft:item_name": {
-									"text": "Shopping Kart",
-									"italic": false,
-									"color": "white"
+									"text": "Shopping Kart"
 								},
 								"minecraft:lore": [
 									[

@@ -1,6 +1,8 @@
 
 #> shopping_kart:kart/switch_model/ride_kart_schedule
 #
+# @executed	at @s
+#
 # @within	shopping_kart:kart/switch_model/init_functions 1t replace
 #
 

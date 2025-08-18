@@ -1,6 +1,8 @@
 
 #> shopping_kart:kart/physics/water
 #
+# @executed	at @s
+#
 # @within	shopping_kart:kart/tick/calculations
 #
 

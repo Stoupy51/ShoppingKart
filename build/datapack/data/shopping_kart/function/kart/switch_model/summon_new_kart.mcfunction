@@ -1,7 +1,9 @@
 
 #> shopping_kart:kart/switch_model/summon_new_kart
 #
-# @within	shopping_kart:kart/switch_model/main
+# @executed	at @s
+#
+# @within	shopping_kart:kart/switch_model/main [ at @s ]
 #
 
 # Tag the current player to ride the new kart

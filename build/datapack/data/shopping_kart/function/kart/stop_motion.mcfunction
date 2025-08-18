@@ -1,6 +1,8 @@
 
 #> shopping_kart:kart/stop_motion
 #
+# @executed	at @s
+#
 # @within	shopping_kart:kart/physics/check_predictions
 #
 

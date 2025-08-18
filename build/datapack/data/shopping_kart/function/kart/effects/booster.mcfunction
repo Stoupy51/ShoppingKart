@@ -1,6 +1,8 @@
 
 #> shopping_kart:kart/effects/booster
 #
+# @executed	at @s
+#
 # @within	shopping_kart:kart/physics/calculation
 #
 

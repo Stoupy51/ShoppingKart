@@ -1,7 +1,9 @@
 
 #> shopping_kart:kart/init_visual
 #
-# @within	shopping_kart:kart/init
+# @executed	at @s
+#
+# @within	shopping_kart:kart/init [ at @s ]
 #
 
 # Add NBT

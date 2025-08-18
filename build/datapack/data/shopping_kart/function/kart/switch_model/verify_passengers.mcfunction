@@ -1,8 +1,10 @@
 
 #> shopping_kart:kart/switch_model/verify_passengers
 #
+# @executed	at @s
+#
 # @within	shopping_kart:kart/switch_model/init_functions
-#			shopping_kart:kart/switch_model/ride_kart_schedule
+#			shopping_kart:kart/switch_model/ride_kart_schedule [ as @e[tag=shopping_kart.waiting_for_passenger] ]
 #
 
 # Add tag if no passenger, remove if there is one

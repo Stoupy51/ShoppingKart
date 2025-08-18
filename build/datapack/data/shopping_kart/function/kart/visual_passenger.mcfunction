@@ -1,6 +1,8 @@
 
 #> shopping_kart:kart/visual_passenger
 #
+# @executed	at @s
+#
 # @within	shopping_kart:kart/tick/calculations
 #
 

@@ -1,6 +1,8 @@
 
 #> shopping_kart:kart/switch_model/apply_old_data
 #
+# @executed	at @s
+#
 # @within	shopping_kart:kart/switch_model/init_functions
 #
 

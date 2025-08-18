@@ -1,7 +1,9 @@
 
 #> shopping_kart:kart/switch_model/ride_kart_entity
 #
-# @within	shopping_kart:kart/switch_model/ride_kart_schedule
+# @executed	at @s
+#
+# @within	shopping_kart:kart/switch_model/ride_kart_schedule [ at @s ]
 #
 
 # Teleport the nearest player to self, and make him ride self

@@ -1,6 +1,8 @@
 
 #> shopping_kart:kart/physics/get_surface
 #
+# @executed	at @s
+#
 # @within	shopping_kart:kart/effects/speed_up
 #			shopping_kart:kart/physics/calculation
 #

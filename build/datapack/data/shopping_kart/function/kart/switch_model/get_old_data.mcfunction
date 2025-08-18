@@ -1,6 +1,8 @@
 
 #> shopping_kart:kart/switch_model/get_old_data
 #
+# @executed	as @a & at @s
+#
 # @within	shopping_kart:kart/switch_model/main
 #
 
