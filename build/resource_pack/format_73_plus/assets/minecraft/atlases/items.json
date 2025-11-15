@@ -1,0 +1,8 @@
+{
+	"sources": [
+		{"type": "minecraft:single","resource": "minecraft:block/black_concrete_powder","sprite": "shopping_kart:atlas/black_concrete_powder"},
+		{"type": "minecraft:single","resource": "minecraft:block/gray_concrete_powder","sprite": "shopping_kart:atlas/gray_concrete_powder"},
+		{"type": "minecraft:single","resource": "minecraft:block/light_blue_concrete_powder","sprite": "shopping_kart:atlas/light_blue_concrete_powder"},
+		{"type": "minecraft:single","resource": "minecraft:block/light_gray_concrete_powder","sprite": "shopping_kart:atlas/light_gray_concrete_powder"}
+	]
+}

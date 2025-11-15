@@ -1,9 +1,7 @@
 
 #> shopping_kart:kart/switch_model/ride_kart_schedule
 #
-# @executed	at @s
-#
-# @within	shopping_kart:kart/switch_model/init_functions 1t replace
+# @within	shopping_kart:kart/switch_model/init_functions 1t replace [ scheduled ]
 #
 
 # Run function on every kart that is waiting for a passenger
