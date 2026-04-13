@@ -26,6 +26,8 @@
 										"shopping_kart": true
 									},
 									"smithed": {
+										"id": "shopping_kart:shopping_kart",
+										"origin": "shopping_kart",
 										"ignore": {"functionality": true,"crafting": true}
 									}
 								}

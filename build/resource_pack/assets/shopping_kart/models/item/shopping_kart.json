@@ -1,11 +1,11 @@
 {
 	"parent": "item/generated",
 	"textures": {
-		"0": "shopping_kart:atlas/black_concrete_powder",
-		"5": "shopping_kart:atlas/light_blue_concrete_powder",
-		"6": "shopping_kart:atlas/light_gray_concrete_powder",
-		"14": "shopping_kart:atlas/gray_concrete_powder",
-		"particle": "shopping_kart:atlas/black_concrete_powder"
+		"0": "minecraft:block/black_concrete_powder",
+		"5": "minecraft:block/light_blue_concrete_powder",
+		"6": "minecraft:block/light_gray_concrete_powder",
+		"14": "minecraft:block/gray_concrete_powder",
+		"particle": "minecraft:block/black_concrete_powder"
 	},
 	"elements": [
 		{

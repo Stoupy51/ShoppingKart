@@ -3,7 +3,7 @@
 #
 # @executed	as @e[tag=shopping_kart.kart_visual]
 #
-# @within	shopping_kart:v1.3.4/tick [ as @e[tag=shopping_kart.kart_visual] ]
+# @within	shopping_kart:v1.4.0/tick [ as @e[tag=shopping_kart.kart_visual] ]
 #
 
 ## Kill self is there is no vehicle, but take first rotation otherwise

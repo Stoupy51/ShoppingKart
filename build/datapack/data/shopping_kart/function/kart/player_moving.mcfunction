@@ -3,7 +3,7 @@
 #
 # @executed	as @a[gamemode=!spectator,predicate=...] & at @s
 #
-# @within	shopping_kart:v1.3.4/tick [ as @a[gamemode=!spectator,predicate=...] & at @s ]
+# @within	shopping_kart:v1.4.0/tick [ as @a[gamemode=!spectator,predicate=...] & at @s ]
 #
 
 tag @s add shopping_kart.temp
