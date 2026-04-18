@@ -59,7 +59,7 @@ meta:
         # Optional list of destination paths where generated files will be copied
         build_copy_destinations:
             # Paths to copy the datapack(s) to
-            datapack: ["D:/latest_snapshot/world/datapacks", "E:/my_folders/advanced_desktop/Switch/libs/datapack"]
+            datapack: ["D:/latest_snapshot/world/datapacks"]
             # Paths to copy the resource pack(s) to
             resource_pack: ["D:/minecraft/snapshot/resourcepacks"]
 
