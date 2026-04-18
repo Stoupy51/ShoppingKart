@@ -37,7 +37,7 @@ upload_to_modrinth(credentials, modrinth_config, changelog)
 
 # Upload to Smithed
 smithed_config: JsonDict = {
-	"project_id": cfg.id,
+	"project_id": "shopping-kart",
 	"project_name": cfg.name,
 	"version": cfg.version,
 }
