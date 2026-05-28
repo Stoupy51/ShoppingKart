@@ -11,5 +11,5 @@ scoreboard players operation @s shopping_kart.id = #next_id shopping_kart.id
 item replace entity @s container.0 with golden_hoe[item_model="shopping_kart:shopping_kart"]
 
 # Ride the kart
-ride @s mount @e[tag=shopping_kart.current_kart,sort=nearest,limit=1]
+ride @s mount @n[tag=shopping_kart.current_kart,sort=nearest]
 
