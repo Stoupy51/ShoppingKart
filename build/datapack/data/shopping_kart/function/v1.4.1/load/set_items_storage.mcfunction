@@ -1,7 +1,7 @@
 
-#> shopping_kart:v1.4.0/load/set_items_storage
+#> shopping_kart:v1.4.1/load/set_items_storage
 #
-# @within	shopping_kart:v1.4.0/load/confirm_load
+# @within	shopping_kart:v1.4.1/load/confirm_load
 #
 
 # Items storage
