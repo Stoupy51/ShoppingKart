@@ -14,7 +14,7 @@
 # If trigger > 0, set current_model to trigger - 1
 execute if score @s shopping_kart.trigger_model matches -1 run scoreboard players add @s shopping_kart.current_model 1
 execute if score @s shopping_kart.trigger_model matches -2 run scoreboard players remove @s shopping_kart.current_model 1
-execute if score @s shopping_kart.trigger_model matches -3 run ride @s[predicate=!shopping_kart:has_vehicle] mount @e[tag=shopping_kart.kart,sort=nearest,limit=1]
+execute if score @s shopping_kart.trigger_model matches -3 run ride @s[predicate=!shopping_kart:has_vehicle] mount @n[tag=shopping_kart.kart]
 execute if score @s shopping_kart.trigger_model matches -4 on vehicle store result score #random shopping_kart.current_model run data get entity @s UUID[0]
 execute if score @s shopping_kart.trigger_model matches -4 run scoreboard players set #56 shopping_kart.data 56
 execute if score @s shopping_kart.trigger_model matches -4 run scoreboard players operation #random shopping_kart.current_model %= #56 shopping_kart.data

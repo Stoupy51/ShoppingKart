@@ -1,9 +1,9 @@
 {
 	"pack": {
-		"pack_format": 94,
+		"pack_format": 107,
 		"description": "ShoppingKart [1.4.0] by Stoupy51",
 		"min_format": [
-			94,
+			107,
 			1
 		],
 		"max_format": [
