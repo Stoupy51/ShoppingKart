@@ -1,7 +1,7 @@
 
 #> shopping_kart:kart/effects/no_steering
 #
-# @executed	at @s
+# @executed	at @s[tag=!shopping_kart.forced_acceleration]
 #
 # @within	shopping_kart:kart/called_by_player
 #

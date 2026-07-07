@@ -1,7 +1,7 @@
 
 #> shopping_kart:kart/tick/calculations
 #
-# @executed	at @s
+# @executed	at @s[tag=!shopping_kart.forced_acceleration]
 #
 # @within	shopping_kart:kart/called_by_player
 #			shopping_kart:kart/tick/main

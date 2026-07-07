@@ -1,7 +1,7 @@
 
 #> shopping_kart:kart/stop_motion
 #
-# @executed	at @s
+# @executed	at @s[tag=!shopping_kart.forced_acceleration]
 #
 # @within	shopping_kart:kart/physics/check_predictions
 #

@@ -2,10 +2,29 @@
 # Imports
 from stewbeet import Context, write_load_file, write_tick_file
 
+from user.kart_core import setup_kart_core_functions
+from user.kart_effects import setup_kart_effects_functions
+from user.kart_physics import setup_kart_physics_functions
+from user.kart_switch_model import setup_kart_switch_model_functions
+from user.kart_tick import setup_kart_tick_functions
+from user.math_functions import setup_math_functions
+from user.resources import setup_resources
+
 
 # Main function is run just before making finalyzing the build process (zip, headers, lang, ...)
 def beet_default(ctx: Context) -> None:
 	ns: str = ctx.project_id
+
+	# Setup all kart functions (core, effects, physics, model switching, ticking) and math utils
+	setup_kart_core_functions(ctx)
+	setup_kart_effects_functions(ctx)
+	setup_kart_physics_functions(ctx)
+	setup_kart_switch_model_functions(ctx)
+	setup_kart_tick_functions(ctx)
+	setup_math_functions(ctx)
+
+	# Setup json resources (predicates, tags)
+	setup_resources(ctx)
 
 	write_tick_file(f"""
 # Detect if a player is moving
@@ -69,4 +88,3 @@ scoreboard players set #1000 {ns}.data 1000
 scoreboard players set #10000 {ns}.data 10000
 scoreboard players set #14142 {ns}.data 14142
 """)
-

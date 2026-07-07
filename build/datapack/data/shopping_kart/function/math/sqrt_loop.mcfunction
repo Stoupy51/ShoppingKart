@@ -1,7 +1,7 @@
 
 #> shopping_kart:math/sqrt_loop
 #
-# @executed	at @s
+# @executed	at @s[tag=!shopping_kart.forced_acceleration]
 #
 # @within	shopping_kart:math/sqrt
 #			shopping_kart:math/sqrt_loop

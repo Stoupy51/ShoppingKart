@@ -1,7 +1,7 @@
 
 #> shopping_kart:kart/visual_passenger
 #
-# @executed	at @s
+# @executed	at @s[tag=!shopping_kart.forced_acceleration]
 #
 # @within	shopping_kart:kart/tick/calculations
 #
