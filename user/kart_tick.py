@@ -34,7 +34,6 @@ execute if score #have_passenger {ns}.data matches 1 run function {ns}:kart/titl
 # Remove temp tag & Add tag to avoid double calculation
 tag @s remove {ns}.temp
 tag @s add {ns}.calculated
-
 """)
 
 	write_function(f"{ns}:kart/tick/main", f"""
@@ -54,7 +53,6 @@ tag @s remove {ns}.calculated
 
 # Add slowness effect
 effect give @s slowness infinite 255 true
-
 """)
 
 	write_function(f"{ns}:kart/tick/visual", f"""
@@ -66,6 +64,5 @@ execute store result score #rotation {ns}.data run data get storage {ns}:main Ro
 scoreboard players add #rotation {ns}.data 1800000
 execute store result entity @s Rotation[0] float 0.0001 run scoreboard players get #rotation {ns}.data
 execute unless data storage {ns}:main Rotation run kill @s
-
 """)
 

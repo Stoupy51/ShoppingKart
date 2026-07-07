@@ -39,7 +39,6 @@ execute if score #model {ns}.data matches 2.. run effect clear @s invisibility
 
 # Remove the temporary storage
 data remove storage {ns}:main temp
-
 """)
 
 	write_function(f"{ns}:kart/switch_model/get_old_data", f"""
@@ -70,7 +69,6 @@ execute store result storage {ns}:main temp.scores.{ns}.booster_timer int 1 run 
 execute store result storage {ns}:main temp.scores.{ns}.reactor_boost int 1 run scoreboard players get @s {ns}.reactor_boost
 execute store result storage {ns}:main temp.scores.{ns}.cruise_control int 1 run scoreboard players get @s {ns}.cruise_control
 execute store result storage {ns}:main temp.scores.switch.temp.compteur int 1 run scoreboard players get @s switch.temp.compteur
-
 """)
 
 	write_function(f"{ns}:kart/switch_model/init_functions", f"""
@@ -90,7 +88,6 @@ schedule function {ns}:kart/switch_model/ride_kart_schedule 1t replace
 
 # Remove temporary tag
 tag @s remove {ns}.new_kart
-
 """)
 
 	write_function(f"{ns}:kart/switch_model/main", f"""
@@ -104,7 +101,6 @@ execute on vehicle if entity @s[tag={ns}.kart] run function {ns}:kart/switch_mod
 # If there is a vehicle, remove it, summon the new one, set the new data and ride it
 execute if score #has_vehicle {ns}.data matches 1 on vehicle run function {ns}:kart/kill_safely
 execute if score #has_vehicle {ns}.data matches 1 at @s run function {ns}:kart/switch_model/summon_new_kart
-
 """)
 
 	write_function(f"{ns}:kart/switch_model/ride_kart_entity", f"""
@@ -114,14 +110,12 @@ ride @p[predicate=!{ns}:has_vehicle] mount @s
 
 # Remove the waiting for passenger tag
 tag @s remove {ns}.waiting_for_passenger
-
 """)
 
 	write_function(f"{ns}:kart/switch_model/ride_kart_schedule", f"""
 # Run function on every kart that is waiting for a passenger
 execute as @e[tag={ns}.waiting_for_passenger] run function {ns}:kart/switch_model/verify_passengers
 execute as @e[tag={ns}.waiting_for_passenger] at @s run function {ns}:kart/switch_model/ride_kart_entity
-
 """)
 
 	write_function(f"{ns}:kart/switch_model/summon_new_kart", f"""
@@ -196,7 +190,6 @@ execute as @e[tag={ns}.new_kart] at @s run function {ns}:kart/switch_model/init_
 
 # Remove the temporary player tag
 tag @s remove {ns}.owner
-
 """)
 
 	write_function(f"{ns}:kart/switch_model/trigger", f"""
@@ -229,7 +222,6 @@ execute if score @s {ns}.trigger_model matches -4 run function {ns}:kart/switch_
 
 ## Reset trigger value
 scoreboard players reset @s {ns}.trigger_model
-
 """)
 
 	write_function(f"{ns}:kart/switch_model/verify_passengers", f"""
@@ -238,6 +230,5 @@ scoreboard players set #has_passenger {ns}.data 0
 execute on passengers if entity @s[type=player] run scoreboard players set #has_passenger {ns}.data 1
 execute if score #has_passenger {ns}.data matches 0 run tag @s add {ns}.waiting_for_passenger
 execute if score #has_passenger {ns}.data matches 1 run tag @s remove {ns}.waiting_for_passenger
-
 """)
 

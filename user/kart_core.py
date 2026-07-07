@@ -23,7 +23,6 @@ scoreboard players add #added {ns}.data 1
 
 # Remove marker
 kill @s
-
 """)
 
 	write_function(f"{ns}:kart/called_by_player", f"""
@@ -32,7 +31,6 @@ execute if entity @s[tag=!{ns}.no_steering] run data modify entity @s Rotation s
 execute if entity @s[tag={ns}.no_steering] run function {ns}:kart/effects/no_steering
 
 function {ns}:kart/tick/calculations
-
 """)
 
 	write_function(f"{ns}:kart/init", f"""
@@ -59,7 +57,6 @@ execute if score #model {ns}.data matches 0..1 at @s summon item_display run fun
 execute if score #model {ns}.data matches 0..1 run effect give @s invisibility infinite 0 true
 execute if score #model {ns}.data matches 0..1 run tag @s remove {ns}.current_kart
 scoreboard players operation @s {ns}.id = #next_id {ns}.id
-
 """)
 
 	write_function(f"{ns}:kart/init_visual", f"""
@@ -76,7 +73,6 @@ item replace entity @s container.0 with golden_hoe[item_model="{ns}:{ns}"]
 
 # Ride the kart
 ride @s mount @n[tag={ns}.current_kart,sort=nearest]
-
 """)
 
 	write_function(f"{ns}:kart/kill_safely", """
@@ -86,7 +82,6 @@ execute on passengers run ride @s dismount
 # Teleport to 0 -10000 0 and kill self
 tp @s 0 -10000 0
 kill @s
-
 """)
 
 	write_function(f"{ns}:kart/motion_from_input", f"""
@@ -102,7 +97,6 @@ execute if predicate {ns}:input/left rotated ~ 0 positioned 0 0 0 positioned ^10
 
 # Normalize motion if 2 inputs (divide by 1.41421356237 = sqrt(2))
 execute if score #added {ns}.data matches 2 run function {ns}:kart/normalize_motion
-
 """)
 
 	write_function(f"{ns}:kart/normalize_motion", f"""
@@ -112,7 +106,6 @@ scoreboard players operation #motion_x {ns}.data /= #14142 {ns}.data
 
 scoreboard players operation #motion_z {ns}.data *= #10000 {ns}.data
 scoreboard players operation #motion_z {ns}.data /= #14142 {ns}.data
-
 
 """)
 
@@ -136,7 +129,6 @@ tag @s remove {ns}.temp
 
 scoreboard players set #motion_x {ns}.data 0
 scoreboard players set #motion_z {ns}.data 0
-
 """)
 
 	write_function(f"{ns}:kart/stop_motion", f"""
@@ -163,7 +155,6 @@ execute if score #collision_type {ns}.data matches 1 run scoreboard players oper
 execute if score #collision_type {ns}.data matches 1 run scoreboard players set @s {ns}.engine 100
 execute if score #collision_type {ns}.data matches 1 run particle lava ~ ~ ~ 1 1 1 0 50 force @a[distance=..50]
 execute if score #collision_type {ns}.data matches 1 run playsound block.anvil.land block @a ~ ~ ~ 0.05 0.1
-
 """)
 
 	write_function(f"{ns}:kart/summon", f"""
@@ -177,7 +168,6 @@ execute summon pig at @s run function {ns}:kart/switch_model/init_functions
 
 # Remove the temporary player tag
 tag @s remove {ns}.owner
-
 """)
 
 	write_function(f"{ns}:kart/title_actionbar", f"""
@@ -211,7 +201,6 @@ execute on passengers run title @s actionbar [{{"text":"Engine: ","color":"yello
 # Reset the old position
 scoreboard players operation @s {ns}.old_pos_x = #new_pos_x {ns}.data
 scoreboard players operation @s {ns}.old_pos_z = #new_pos_z {ns}.data
-
 """)
 
 	write_function(f"{ns}:kart/visual_passenger", f"""
@@ -220,6 +209,5 @@ scoreboard players set #have_passenger {ns}.data 0
 execute store success score #have_passenger {ns}.data on passengers if entity @s[type=player] run scoreboard players set #have_passenger {ns}.data 1
 execute if score #have_passenger {ns}.data matches 0 run effect give @s slowness 1 255 true
 execute if score #have_passenger {ns}.data matches 1 run effect clear @s slowness
-
 """)
 

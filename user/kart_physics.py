@@ -21,7 +21,6 @@ execute if score #surface {ns}.data matches 2 store result score @s {ns}.motion_
 execute if score #surface {ns}.data matches 3..4 store result score @s {ns}.motion_x run data get storage {ns}:main Motion[0] 8000000
 execute if score #surface {ns}.data matches 3..4 store result score @s {ns}.motion_z run data get storage {ns}:main Motion[2] 8000000
 data remove storage {ns}:main Motion
-
 """)
 
 	write_function(f"{ns}:kart/physics/calculation", f"""
@@ -80,7 +79,6 @@ scoreboard players set #motion_x {ns}.data 0
 scoreboard players set #motion_z {ns}.data 0
 # tellraw @a {{"score":{{"name":"#new_motion_x","objective":"{ns}.data"}},"color":"red"}}
 # tellraw @a {{"score":{{"name":"#new_motion_z","objective":"{ns}.data"}},"color":"blue"}}
-
 """)
 
 	write_function(f"{ns}:kart/physics/check_predictions", f"""
@@ -95,7 +93,6 @@ scoreboard players add @s[scores={{{ns}.predicted_pos_x=0}}] {ns}.predicted_pos_
 scoreboard players add @s[scores={{{ns}.predicted_pos_z=0}}] {ns}.predicted_pos_z 1
 execute if score @s {ns}.engine matches 100.. if score @s {ns}.predicted_pos_x matches -2..2 unless score @s {ns}.predicted_pos_z matches -3..3 run function {ns}:kart/stop_motion
 execute if score @s {ns}.engine matches 100.. if score @s {ns}.predicted_pos_z matches -2..2 unless score @s {ns}.predicted_pos_x matches -3..3 run function {ns}:kart/stop_motion
-
 """)
 
 	write_function(f"{ns}:kart/physics/get_surface", f"""
@@ -108,7 +105,6 @@ execute if entity @s[tag=!{ns}.in_water] if block ~ ~-.1 ~ #{ns}:kart_surfaces/s
 execute if entity @s[tag=!{ns}.in_water] if block ~ ~-.1 ~ #{ns}:kart_surfaces/slow run scoreboard players set #surface {ns}.data 3
 execute if entity @s[tag=!{ns}.in_water] if block ~ ~-.1 ~ #{ns}:kart_surfaces/very_slow run scoreboard players set #surface {ns}.data 4
 execute if entity @s[tag={ns}.no_grip] run scoreboard players set #surface {ns}.data 2
-
 """)
 
 	write_function(f"{ns}:kart/physics/predict_position", f"""
@@ -118,7 +114,6 @@ scoreboard players operation #new_motion_x {ns}.data /= #1000 {ns}.data
 scoreboard players operation #new_motion_z {ns}.data /= #1000 {ns}.data
 scoreboard players operation @s {ns}.predicted_pos_x += #new_motion_x {ns}.data
 scoreboard players operation @s {ns}.predicted_pos_z += #new_motion_z {ns}.data
-
 """)
 
 	write_function(f"{ns}:kart/physics/water", f"""
@@ -127,6 +122,5 @@ execute if entity @s[tag={ns}.in_water,scores={{{ns}.engine=1300..}}] run data m
 execute unless block ~ ~ ~ water run tag @s remove {ns}.in_water
 execute if block ~ ~ ~ water run tag @s add {ns}.in_water
 execute if entity @s[tag={ns}.in_water,scores={{{ns}.engine=750..}}] if block ~ ~ ~ water run data modify entity @s Motion[1] set value -0.5d
-
 """)
 

@@ -27,7 +27,6 @@ execute if score @s {ns}.booster_timer matches 0 if score #new {ns}.data matches
 execute on passengers at @s run playsound block.note_block.harp block @s ~ ~ ~ .5
 
 # tellraw @a [{{"text":"Old / New : ","color":"yellow"}},{{"score":{{"name":"#old","objective":"{ns}.data"}},"color":"aqua"}},{{"text":" / "}},{{"score":{{"name":"#new","objective":"{ns}.data"}},"color":"aqua"}}]
-
 """)
 
 	write_function(f"{ns}:kart/effects/forced_acceleration", f"""
@@ -39,13 +38,11 @@ execute if entity @s[tag=!{ns}.no_steering] run data modify entity @s Rotation[0
 execute positioned 0 0 0 summon marker run function {ns}:kart/effects/no_steering_marker
 function {ns}:kart/called_by_player
 
-
 """)
 
 	write_function(f"{ns}:kart/effects/no_steering", f"""
 data modify storage {ns}:main Rotation set from entity @s Rotation
 execute positioned 0 0 0 summon marker run function {ns}:kart/effects/no_steering_marker
-
 """)
 
 	write_function(f"{ns}:kart/effects/no_steering_marker", f"""
@@ -54,14 +51,12 @@ execute at @s run tp @s ^ ^ ^1000
 execute store result score #motion_x {ns}.data run data get entity @s Pos[0] 17.5671456314799
 execute store result score #motion_z {ns}.data run data get entity @s Pos[2] 17.5671456314799
 kill @s
-
 """)
 
 	write_function(f"{ns}:kart/effects/speed_down", f"""
 # Slow down engine 28 per tick
 scoreboard players remove @s {ns}.engine 28
 scoreboard players set @s[scores={{{ns}.engine=..-1}}] {ns}.engine 0
-
 """)
 
 	write_function(f"{ns}:kart/effects/speed_up", f"""
@@ -85,6 +80,5 @@ execute if score @s {ns}.reactor_boost matches 1.. run scoreboard players set #a
 scoreboard players operation @s {ns}.engine += #add {ns}.engine
 execute if score @s {ns}.engine > @s {ns}.max_engine run scoreboard players operation @s {ns}.engine = @s {ns}.max_engine
 tag @s remove {ns}.speed_up
-
 """)
 
