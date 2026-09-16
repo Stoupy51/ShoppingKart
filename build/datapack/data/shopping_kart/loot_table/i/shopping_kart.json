@@ -5,7 +5,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:command_block",
+					"name": "minecraft:recovery_compass",
 					"functions": [
 						{
 							"function": "minecraft:set_components",
@@ -17,8 +17,8 @@
 								"minecraft:lore": [
 									[
 										"",
-										{"text": "I","color": "white","italic": false,"font": "shopping_kart:icons"},
-										{"text": " ShoppingKart","italic": true,"color": "blue"}
+										{"text": "ꀁ","color": "white","italic": false,"font": "shopping_kart:tooltip"},
+										{"text": "뀁ShoppingKart","italic": false,"color": "white","font": "shopping_kart:tooltip"}
 									]
 								],
 								"minecraft:custom_data": {
