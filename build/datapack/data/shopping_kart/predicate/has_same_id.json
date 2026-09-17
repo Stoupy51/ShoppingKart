@@ -3,22 +3,12 @@
 	"entity": "this",
 	"scores": {
 		"shopping_kart.id": {
-			"min": {
-				"type": "minecraft:score",
-				"target": {
-					"type": "minecraft:fixed",
-					"name": "#predicate"
-				},
-				"score": "shopping_kart.id"
+			"type": "minecraft:score",
+			"target": {
+				"type": "minecraft:fixed",
+				"name": "#predicate"
 			},
-			"max": {
-				"type": "minecraft:score",
-				"target": {
-					"type": "minecraft:fixed",
-					"name": "#predicate"
-				},
-				"score": "shopping_kart.id"
-			}
+			"score": "shopping_kart.id"
 		}
 	}
 }

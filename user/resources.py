@@ -14,7 +14,7 @@ def setup_resources(ctx: Context) -> None:
 	json_content = {"type":"minecraft:entity_properties","entity":"this","predicate":{"vehicle":{"nbt":f"{{Tags:[\"{ns}.kart\"]}}"}}}
 	ctx.data[ns].predicates["has_kart_vehicle"] = set_json_encoder(Predicate(json_content), max_level=-1)
 
-	json_content = {"type":"minecraft:entity_scores","entity":"this","scores":{f"{ns}.id":{"min":{"type":"minecraft:score","target":{"type":"minecraft:fixed","name":"#predicate"},"score":f"{ns}.id"},"max":{"type":"minecraft:score","target":{"type":"minecraft:fixed","name":"#predicate"},"score":f"{ns}.id"}}}}
+	json_content = {"type":"minecraft:entity_scores","entity":"this","scores":{f"{ns}.id":{"type":"minecraft:score","target":{"type":"minecraft:fixed","name":"#predicate"},"score":f"{ns}.id"}}}
 	ctx.data[ns].predicates["has_same_id"] = set_json_encoder(Predicate(json_content), max_level=-1)
 
 	json_content = {"type":"minecraft:entity_properties","entity":"this","predicate":{"vehicle":{}}}
