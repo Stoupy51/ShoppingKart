@@ -1,7 +1,7 @@
 
 #> shopping_kart:kart/summon
 #
-# @within	???
+# @within	(public)
 #
 
 # Tag the current player to ride the new kart

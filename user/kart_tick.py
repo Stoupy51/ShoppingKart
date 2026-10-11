@@ -38,10 +38,11 @@ tag @s add {ns}.calculated
 
 	write_function(f"{ns}:kart/tick/main", f"""
 # Slow down, Speed up engine, refresh booster timer
-execute if score @s {ns}.engine matches 1.. run function {ns}:kart/effects/speed_down
+execute if score @s {ns}.engine matches 1.. unless score @s {ns}.cruise_control matches 1.. run function {ns}:kart/effects/speed_down
 execute if score @s {ns}.reactor_boost matches 1.. run particle flame ~ ~ ~ 0.4 0.4 0.4 0 5
 execute if score @s {ns}.reactor_boost matches 1.. run scoreboard players remove @s {ns}.reactor_boost 1
-execute if entity @s[tag={ns}.speed_up] run function {ns}:kart/effects/speed_up
+execute if entity @s[tag={ns}.speed_up] unless score @s {ns}.cruise_control matches 1.. run function {ns}:kart/effects/speed_up
+execute if entity @s[tag={ns}.speed_up] if score @s {ns}.cruise_control matches 1.. run tag @s remove {ns}.speed_up
 scoreboard players remove @s[scores={{{ns}.booster_timer=1..}}] {ns}.booster_timer 1
 
 # Forced acceleration
@@ -65,4 +66,3 @@ scoreboard players add #rotation {ns}.data 1800000
 execute store result entity @s Rotation[0] float 0.0001 run scoreboard players get #rotation {ns}.data
 execute unless data storage {ns}:main Rotation run kill @s
 """)
-
