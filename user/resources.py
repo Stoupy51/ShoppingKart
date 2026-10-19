@@ -1,7 +1,7 @@
 
 # ruff: noqa: E501
 # Imports
-from beet import BlockTag, Predicate
+from beet import BlockTag, EntityTypeTag, Predicate
 from stewbeet import Context, JsonDict, set_json_encoder
 
 
@@ -61,4 +61,7 @@ def setup_resources(ctx: Context) -> None:
 
 	json_content = {"values":["soul_sand","mud","mud_brick_slab","mud_brick_stairs","mud_brick_wall","honey_block","slime_block"]}
 	ctx.data[ns].block_tags["kart_surfaces/very_slow"] = set_json_encoder(BlockTag(json_content))
+
+	json_content = {"replace":True,"values":["camel","donkey","happy_ghast","horse","llama","mule","ravager","spider","trader_llama","zombie_horse"]}
+	ctx.data["minecraft"].entity_type_tags["dismounts_underwater"] = set_json_encoder(EntityTypeTag(json_content))
 
