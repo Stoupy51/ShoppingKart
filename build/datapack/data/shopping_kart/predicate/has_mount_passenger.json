@@ -1,0 +1,13 @@
+{
+	"type": "minecraft:entity_properties",
+	"entity": "this",
+	"predicate": {
+		"passenger": {
+			"minecraft:entity_tags": {
+				"all_of": [
+					"shopping_kart.mount"
+				]
+			}
+		}
+	}
+}

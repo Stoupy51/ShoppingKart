@@ -77,12 +77,34 @@ item replace entity @s container.0 with golden_hoe[item_model="{ns}:{ns}"]
 ride @s mount @n[tag={ns}.current_kart,sort=nearest]
 """)
 
-	write_function(f"{ns}:kart/kill_safely", """
+	write_function(f"{ns}:kart/kill_safely", f"""
 # Unride passengers
+execute on passengers if entity @s[tag={ns}.mount] run kill @s
 execute on passengers run ride @s dismount
 
 # Teleport to 0 -10000 0 and kill self
 tp @s 0 -10000 0
+kill @s
+""")
+
+	write_function(f"{ns}:kart/mount/clicked", f"""
+# Each clicked interaction mounts the player who clicked it, so two clicks in the same tick are both handled
+advancement revoke @s only {ns}:mount_kart
+execute as @e[type=interaction,tag={ns}.mount,distance=..8] if data entity @s interaction run function {ns}:kart/mount/ride
+""")
+
+	write_function(f"{ns}:kart/mount/init", f"""
+# A passenger sits 0.87 above a pig's feet, so this box covers the top of the kart
+tag @s add {ns}.mount
+data merge entity @s {{width:1.2f,height:0.4f}}
+ride @s mount @n[tag={ns}.kart,tag={ns}.temp,distance=..0.01]
+""")
+
+	write_function(f"{ns}:kart/mount/ride", f"""
+# The interaction's target is the last player who right clicked it
+execute on target run tag @s add {ns}.clicker
+execute on vehicle run ride @p[tag={ns}.clicker] mount @s
+execute on target run tag @s remove {ns}.clicker
 kill @s
 """)
 

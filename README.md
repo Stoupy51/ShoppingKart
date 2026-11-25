@@ -18,6 +18,8 @@
   - `-3`: Ride the nearest kart
   - `-4`: Random model
 
+A kart left without a player can be mounted again with a right click on its top once it has stopped.
+
 ## ⚙️ Configuration Commands
 Fine-tune your shopping kart experience with these configuration commands!
 

@@ -25,6 +25,12 @@ function {ns}:kart/physics/calculation
 ## Apply new motion & update old motion
 function {ns}:kart/physics/apply_motion
 
+## An empty kart at rest carries an interaction, so a right click mounts it again
+scoreboard players set #mountable {ns}.data 0
+execute if score #have_passenger {ns}.data matches 0 if score @s {ns}.motion_x matches -10000..10000 if score @s {ns}.motion_z matches -10000..10000 run scoreboard players set #mountable {ns}.data 1
+execute if score #mountable {ns}.data matches 0 on passengers if entity @s[tag={ns}.mount] run kill @s
+execute if score #mountable {ns}.data matches 1 unless predicate {ns}:has_mount_passenger summon interaction run function {ns}:kart/mount/init
+
 ## Try to predict position after 1 tick (new_pos = old_pos + new_motion)
 function {ns}:kart/physics/predict_position
 

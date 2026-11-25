@@ -29,6 +29,12 @@ def setup_resources(ctx: Context) -> None:
 	json_content = {"type":"minecraft:entity_properties","entity":"this","predicate":{"passenger":{"minecraft:entity_type":"minecraft:player"}}}
 	ctx.data[ns].predicates["have_player_passenger"] = set_json_encoder(Predicate(json_content), max_level=-1)
 
+	json_content = {"type":"minecraft:entity_properties","entity":"this","predicate":{"passenger":{"minecraft:entity_tags":{"all_of":[f"{ns}.mount"]}}}}
+	ctx.data[ns].predicates["has_mount_passenger"] = set_json_encoder(Predicate(json_content), max_level=-1)
+
+	json_content = {"criteria":{"requirement":{"trigger":"minecraft:player_interacted_with_entity","conditions":{"entity":{"type":"minecraft:entity_properties","entity":"this","predicate":{"minecraft:entity_tags":{"all_of":[f"{ns}.mount"]}}}}}},"rewards":{"function":f"{ns}:kart/mount/clicked"}}
+	ctx.data[ns].advancements["mount_kart"] = set_json_encoder(Advancement(json_content), max_level=-1)
+
 	json_content = {"type":"minecraft:entity_properties","entity":"this","predicate":{"passenger":{"minecraft:entity_type":"minecraft:player","nbt":f"{{Tags:[\"{ns}.temp\"]}}"}}}
 	ctx.data[ns].predicates["have_temp_player_passenger"] = set_json_encoder(Predicate(json_content), max_level=-1)
 

@@ -22,6 +22,12 @@ function shopping_kart:kart/physics/calculation
 ## Apply new motion & update old motion
 function shopping_kart:kart/physics/apply_motion
 
+## An empty kart at rest carries an interaction, so a right click mounts it again
+scoreboard players set #mountable shopping_kart.data 0
+execute if score #have_passenger shopping_kart.data matches 0 if score @s shopping_kart.motion_x matches -10000..10000 if score @s shopping_kart.motion_z matches -10000..10000 run scoreboard players set #mountable shopping_kart.data 1
+execute if score #mountable shopping_kart.data matches 0 on passengers if entity @s[tag=shopping_kart.mount] run kill @s
+execute if score #mountable shopping_kart.data matches 1 unless predicate shopping_kart:has_mount_passenger summon interaction run function shopping_kart:kart/mount/init
+
 ## Try to predict position after 1 tick (new_pos = old_pos + new_motion)
 function shopping_kart:kart/physics/predict_position
 
