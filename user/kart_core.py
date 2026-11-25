@@ -103,7 +103,8 @@ ride @s mount @n[tag={ns}.kart,tag={ns}.temp,distance=..0.01]
 	write_function(f"{ns}:kart/mount/ride", f"""
 # The interaction's target is the last player who right clicked it
 execute on target run tag @s add {ns}.clicker
-execute on vehicle run ride @p[tag={ns}.clicker] mount @s
+execute on vehicle store success score #success {ns}.data run ride @p[tag={ns}.clicker] mount @s
+execute if score #success {ns}.data matches 1 on target at @s run function #{ns}:signals/kart_mounted
 execute on target run tag @s remove {ns}.clicker
 kill @s
 """)

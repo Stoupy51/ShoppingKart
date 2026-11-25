@@ -107,6 +107,11 @@ scoreboard players operation #e {ns}.data < @s {ns}.restitution
 execute unless function {ns}:kart/physics/impulse run return 0
 scoreboard players operation @s {ns}.motion_x -= #ix {ns}.data
 scoreboard players operation @s {ns}.motion_z -= #iz {ns}.data
+function {ns}:kart/signal_parties/add_victim
+execute as @n[tag={ns}.kart,tag={ns}.temp,distance=..1] run function {ns}:kart/signal_parties/add_attacker
+function #{ns}:signals/kart_collision
+tag @e[tag={ns}.attacker] remove {ns}.attacker
+tag @e[tag={ns}.victim] remove {ns}.victim
 """)
 
 	write_function(f"{ns}:kart/physics/collide_player", f"""
@@ -117,6 +122,15 @@ scoreboard players set #rel_z {ns}.data 0
 scoreboard players operation #e {ns}.data = #restitution {ns}.data
 execute unless function {ns}:kart/physics/impulse run return 0
 
+# The server sees a launched player move a tick later or more, so a kart still closing in on them the next tick is the same hit
+execute store result score #now {ns}.data run time query gametime
+scoreboard players operation #since_hit {ns}.data = #now {ns}.data
+scoreboard players operation #since_hit {ns}.data -= @s {ns}.hit_tick
+scoreboard players operation @s {ns}.hit_tick = #now {ns}.data
+execute if score #since_hit {ns}.data matches 1 run scoreboard players operation #vx {ns}.data -= #ix {ns}.data
+execute if score #since_hit {ns}.data matches 1 run scoreboard players operation #vz {ns}.data -= #iz {ns}.data
+execute if score #since_hit {ns}.data matches 1 run return 0
+
 # The player takes the opposite impulse, and player_motion counts 10000 per block per tick
 scoreboard players operation $x player_motion.api.launch = #ix {ns}.data
 scoreboard players operation $z player_motion.api.launch = #iz {ns}.data
@@ -126,6 +140,11 @@ scoreboard players operation $x player_motion.api.launch *= #-1 {ns}.data
 scoreboard players operation $z player_motion.api.launch *= #-1 {ns}.data
 scoreboard players operation $y player_motion.api.launch = #player_lift {ns}.data
 function player_motion:api/launch_xyz
+tag @s add {ns}.victim
+execute as @n[tag={ns}.kart,tag={ns}.temp,distance=..1] run function {ns}:kart/signal_parties/add_attacker
+function #{ns}:signals/player_hit
+tag @e[tag={ns}.attacker] remove {ns}.attacker
+tag @s remove {ns}.victim
 """)
 
 	write_function(f"{ns}:kart/physics/collisions", f"""
@@ -148,6 +167,16 @@ scoreboard players operation #vx {ns}.data += #collision_x {ns}.data
 scoreboard players operation #vz {ns}.data += #collision_z {ns}.data
 scoreboard players operation @s {ns}.motion_x = #vx {ns}.data
 scoreboard players operation @s {ns}.motion_z = #vz {ns}.data
+""")
+
+	write_function(f"{ns}:kart/signal_parties/add_attacker", f"""
+tag @s add {ns}.attacker
+execute on passengers if entity @s[type=player] run tag @s add {ns}.attacker
+""")
+
+	write_function(f"{ns}:kart/signal_parties/add_victim", f"""
+tag @s add {ns}.victim
+execute on passengers if entity @s[type=player] run tag @s add {ns}.victim
 """)
 
 	write_function(f"{ns}:kart/physics/get_surface", f"""

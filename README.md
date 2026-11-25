@@ -85,6 +85,22 @@ Edit the corresponding `fast.json`, `slippery.json`, `slow.json`, or `very_slow.
 - 🚀 **Reactor boost**: Temporarily increases acceleration and movement; activate it with the `shopping_kart.reactor_boost` scoreboard as shown above.
 - 🌊 **Water**: Kart buoyancy and vertical movement are adjusted automatically while it is in water.
 
+## 📡 Signals
+A datapack reacts to kart events by adding its functions to these function tags, in its own `data/shopping_kart/tags/function/signals/<signal>.json`. Shopping Kart calls a signal only when its event happens, so an unused signal costs nothing per tick.
+
+| Signal | When | `@s`, at its position | Selectors | Readable data |
+|--------|------|-----------------------|-----------|---------------|
+| `#shopping_kart:signals/kart_spawned` | A kart is summoned, including the new kart of a model switch | The new kart | The summoning player carries `shopping_kart.owner` | `@s shopping_kart.id`, the model number in `#model shopping_kart.data` |
+| `#shopping_kart:signals/kart_mounted` | Shopping Kart seats a player: right click on a stopped empty kart, the ride after a summon or a model switch, trigger `-3` | The seated player | The kart is `execute on vehicle` | The kart's `shopping_kart.id` |
+| `#shopping_kart:signals/kart_collision` | A kart hits another kart and hands it speed | The struck kart | `shopping_kart.victim`: the struck kart and its driver. `shopping_kart.attacker`: the striking kart and its driver | Both karts' `shopping_kart.id`, the speed handed over in `#j shopping_kart.data` (10000 per block per tick) |
+| `#shopping_kart:signals/player_hit` | A kart launches a player on foot, once per hit | The hit player | `shopping_kart.victim`: the player. `shopping_kart.attacker`: the kart and its driver | The kart's `shopping_kart.id`, `#j shopping_kart.data` |
+
+The `shopping_kart.victim` and `shopping_kart.attacker` tags exist only while the signal runs, so any function in the tag can select them. For example, to credit the driver with a hit:
+
+```mcfunction
+scoreboard players add @a[tag=shopping_kart.attacker] mygame.hits 1
+```
+
 ## ⭐ Star History
 
 <a href="https://star-history.com/#Stoupy51/ShoppingKart&Date">

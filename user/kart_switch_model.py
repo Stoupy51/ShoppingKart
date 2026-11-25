@@ -92,6 +92,7 @@ schedule function {ns}:kart/switch_model/ride_kart_schedule 1t replace
 
 # Remove temporary tag
 tag @s remove {ns}.new_kart
+function #{ns}:signals/kart_spawned
 """)
 
 	write_function(f"{ns}:kart/switch_model/main", f"""
@@ -110,7 +111,8 @@ execute if score #has_vehicle {ns}.data matches 1 at @s run function {ns}:kart/s
 	write_function(f"{ns}:kart/switch_model/ride_kart_entity", f"""
 # Teleport the nearest player to self, and make him ride self
 tp @p[predicate=!{ns}:has_vehicle] @s
-ride @p[predicate=!{ns}:has_vehicle] mount @s
+execute store success score #success {ns}.data run ride @p[predicate=!{ns}:has_vehicle] mount @s
+execute if score #success {ns}.data matches 1 on passengers if entity @s[type=player] at @s run function #{ns}:signals/kart_mounted
 
 # Remove the waiting for passenger tag
 tag @s remove {ns}.waiting_for_passenger
@@ -205,7 +207,8 @@ tag @s remove {ns}.owner
 # If trigger > 0, set current_model to trigger - 1
 execute if score @s {ns}.trigger_model matches -1 run scoreboard players add @s {ns}.current_model 1
 execute if score @s {ns}.trigger_model matches -2 run scoreboard players remove @s {ns}.current_model 1
-execute if score @s {ns}.trigger_model matches -3 run ride @s[predicate=!{ns}:has_vehicle] mount @n[tag={ns}.kart]
+execute if score @s {ns}.trigger_model matches -3 store success score #success {ns}.data run ride @s[predicate=!{ns}:has_vehicle] mount @n[tag={ns}.kart]
+execute if score @s {ns}.trigger_model matches -3 if score #success {ns}.data matches 1 run function #{ns}:signals/kart_mounted
 execute if score @s {ns}.trigger_model matches -4 on vehicle store result score #random {ns}.current_model run data get entity @s UUID[0]
 execute if score @s {ns}.trigger_model matches -4 run scoreboard players set #56 {ns}.data 56
 execute if score @s {ns}.trigger_model matches -4 run scoreboard players operation #random {ns}.current_model %= #56 {ns}.data

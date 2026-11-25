@@ -23,4 +23,5 @@ schedule function shopping_kart:kart/switch_model/ride_kart_schedule 1t replace
 
 # Remove temporary tag
 tag @s remove shopping_kart.new_kart
+function #shopping_kart:signals/kart_spawned
 

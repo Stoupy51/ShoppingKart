@@ -58,6 +58,7 @@ scoreboard objectives add {ns}.reactor_boost dummy
 scoreboard objectives add {ns}.cruise_control dummy
 scoreboard objectives add {ns}.collision_factor dummy
 scoreboard objectives add {ns}.restitution dummy
+scoreboard objectives add {ns}.hit_tick dummy
 
 scoreboard objectives add {ns}.trigger_model trigger
 scoreboard objectives add {ns}.current_model dummy

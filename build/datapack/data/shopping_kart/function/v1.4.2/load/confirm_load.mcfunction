@@ -25,6 +25,7 @@ scoreboard objectives add shopping_kart.reactor_boost dummy
 scoreboard objectives add shopping_kart.cruise_control dummy
 scoreboard objectives add shopping_kart.collision_factor dummy
 scoreboard objectives add shopping_kart.restitution dummy
+scoreboard objectives add shopping_kart.hit_tick dummy
 
 scoreboard objectives add shopping_kart.trigger_model trigger
 scoreboard objectives add shopping_kart.current_model dummy
