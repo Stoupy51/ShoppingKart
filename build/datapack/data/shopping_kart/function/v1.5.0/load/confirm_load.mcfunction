@@ -1,13 +1,13 @@
 
-#> shopping_kart:v1.4.2/load/confirm_load
+#> shopping_kart:v1.5.0/load/confirm_load
 #
-# @within	shopping_kart:v1.4.2/load/secondary
+# @within	shopping_kart:v1.5.0/load/secondary
 #
 
 # Confirm load
-tellraw @a[tag=convention.debug] {"text":"[Loaded ShoppingKart v1.4.2]","color":"green"}
+tellraw @a[tag=convention.debug] {"text":"[Loaded ShoppingKart v1.5.0]","color":"green"}
 scoreboard players set #shopping_kart.loaded load.status 1
-function shopping_kart:v1.4.2/load/set_items_storage
+function shopping_kart:v1.5.0/load/set_items_storage
 
 scoreboard objectives add shopping_kart.data dummy
 scoreboard objectives add shopping_kart.id dummy

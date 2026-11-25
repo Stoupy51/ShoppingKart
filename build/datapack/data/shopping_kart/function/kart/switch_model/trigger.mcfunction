@@ -3,7 +3,7 @@
 #
 # @executed	as @a & at @s
 #
-# @within	shopping_kart:v1.4.2/tick [ as @a & at @s ]
+# @within	shopping_kart:v1.5.0/tick [ as @a & at @s ]
 #
 
 ## Manage trigger value
