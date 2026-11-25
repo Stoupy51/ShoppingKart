@@ -48,6 +48,8 @@ execute if score #can_fly {ns}.data matches 1 run tag @s add {ns}.can_fly
 
 # Add kart scoreboard
 scoreboard players operation @s {ns}.max_engine = #default_max_engine {ns}.data
+scoreboard players operation @s {ns}.collision_factor = #default_collision_factor {ns}.data
+scoreboard players operation @s {ns}.restitution = #default_restitution {ns}.data
 scoreboard players set @s {ns}.booster_timer 0
 
 # Kart Visual

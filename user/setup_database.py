@@ -1,11 +1,10 @@
 
+# ruff: noqa: E501
 # Import database helper
 from stewbeet import (
-	CUSTOM_ITEM_VANILLA,
-	OVERRIDE_MODEL,
 	Context,
-	Mem,
 	Item,
+	Mem,
 	add_item_model_component,
 	add_item_name_and_lore_if_missing,
 	add_private_custom_data_for_namespace,

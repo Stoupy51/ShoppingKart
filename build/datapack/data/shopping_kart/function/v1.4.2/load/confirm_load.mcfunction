@@ -23,11 +23,16 @@ scoreboard objectives add shopping_kart.old_pos_z dummy
 scoreboard objectives add shopping_kart.booster_timer dummy
 scoreboard objectives add shopping_kart.reactor_boost dummy
 scoreboard objectives add shopping_kart.cruise_control dummy
+scoreboard objectives add shopping_kart.collision_factor dummy
+scoreboard objectives add shopping_kart.restitution dummy
 
 scoreboard objectives add shopping_kart.trigger_model trigger
 scoreboard objectives add shopping_kart.current_model dummy
 
 scoreboard players set #default_max_engine shopping_kart.data 1500
+scoreboard players set #default_collision_factor shopping_kart.data 1000
+scoreboard players set #default_restitution shopping_kart.data 500
+scoreboard players set #player_lift shopping_kart.data 0
 
 #define storage shopping_kart:main
 #define storage shopping_kart:temp

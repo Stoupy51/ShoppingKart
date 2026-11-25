@@ -15,7 +15,8 @@
   - `number > 0`: Specific model number
   - `-1`: Next model
   - `-2`: Previous model
-  - `-3`: Random model
+  - `-3`: Ride the nearest kart
+  - `-4`: Random model
 
 ## ⚙️ Configuration Commands
 Fine-tune your shopping kart experience with these configuration commands!
@@ -30,6 +31,8 @@ The following tags and scoreboards are applied to the kart entity (tagged `shopp
 | Engine off | `tag @e[tag=shopping_kart.kart] add shopping_kart.engine_off` | `tag @e[tag=shopping_kart.kart] remove shopping_kart.engine_off` | Prevents normal acceleration from building engine power; any existing power continues to drain. |
 | No grip | `tag @e[tag=shopping_kart.kart] add shopping_kart.no_grip` | `tag @e[tag=shopping_kart.kart] remove shopping_kart.no_grip` | Makes the kart handle as if it were on a slippery surface, regardless of the block underneath it. |
 | Cruise control | `scoreboard players set @e[tag=shopping_kart.kart] shopping_kart.cruise_control 1` | `scoreboard players set @e[tag=shopping_kart.kart] shopping_kart.cruise_control 0` | Holds the current engine level: normal engine drain and steering-driven engine gain are suspended until disabled. Steering still works; boosters can still modify the engine level. |
+| Collisions | `scoreboard players set @e[tag=shopping_kart.kart] shopping_kart.collision_factor 1000` | `scoreboard players set @e[tag=shopping_kart.kart] shopping_kart.collision_factor 0` | Makes a kart, ridden or not, collide with the karts and players on foot it touches, which vanilla never does for an entity carrying passengers. A fast kart hands its speed to what it hits, then the factor pushes them apart: `1000` is the default strength, `5000` is five times stronger. At `0` the kart neither hits nor is hit. |
+| Restitution | `scoreboard players set @e[tag=shopping_kart.kart] shopping_kart.restitution 1000` | `scoreboard players set @e[tag=shopping_kart.kart] shopping_kart.restitution 0` | How much speed a collision gives back. At `1000` a kart hitting a still one stops and hands over all its speed, at `0` both roll on together at half the speed, `500` is the default. Two karts use the lower of their values, and one hit transfers at most 1 block per tick. |
 
 For example, put the cruise-control enable command in an impulse command block to activate it once. Use the disable command to return to normal engine drain and acceleration. A repeating command block is not needed.
 
@@ -40,6 +43,25 @@ scoreboard players set @e[tag=shopping_kart.kart] shopping_kart.reactor_boost 10
 ```
 
 The reactor boost increases acceleration and movement for 100 ticks. The score counts down automatically.
+
+A new kart takes its collision factor from `#default_collision_factor shopping_kart.data`, 1000 by default, and its restitution from `#default_restitution shopping_kart.data`, 500 by default. A datapack built on Shopping Kart sets them for the karts it summons next:
+
+```mcfunction
+scoreboard players set #default_collision_factor shopping_kart.data 5000
+scoreboard players set #default_restitution shopping_kart.data 1000
+```
+
+Shopping Kart's load function sets them back to their defaults on every `/reload`, so set them after Shopping Kart has loaded, for instance when your game starts.
+
+A kart pushes a player on foot through the [Player Motion API](https://github.com/MulverineX/player_motion) library, so install it next to Shopping Kart. Without it, karts still slow down when they hit a player, but the player is not pushed.
+
+A hit player is not lifted by default. `#player_lift shopping_kart.data` adds an upward speed to the push, 10000 per block per tick, so a game mode that throws players into the void can send them further (an airborne player loses less speed than one sliding on the ground):
+
+```mcfunction
+scoreboard players set #player_lift shopping_kart.data 2000
+```
+
+Like the defaults above, it is set back to 0 on every `/reload`.
 
 The `speed_up` and `speed_down` effects are handled automatically while driving: steering input accelerates the kart, and engine power naturally drains when not using cruise control. Drive over magenta glazed terracotta to activate a directional booster.
 
@@ -70,3 +92,4 @@ Edit the corresponding `fast.json`, `slippery.json`, `slow.json`, or `very_slow.
    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Stoupy51/ShoppingKart&type=Date"/>
  </picture>
 </a>
+

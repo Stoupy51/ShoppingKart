@@ -66,3 +66,4 @@ scoreboard players add #rotation {ns}.data 1800000
 execute store result entity @s Rotation[0] float 0.0001 run scoreboard players get #rotation {ns}.data
 execute unless data storage {ns}:main Rotation run kill @s
 """)
+

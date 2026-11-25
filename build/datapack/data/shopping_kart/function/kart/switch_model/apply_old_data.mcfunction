@@ -28,6 +28,8 @@ execute store result score @s shopping_kart.old_pos_z run data get storage shopp
 execute store result score @s shopping_kart.booster_timer run data get storage shopping_kart:main temp.scores.shopping_kart.booster_timer
 execute store result score @s shopping_kart.reactor_boost run data get storage shopping_kart:main temp.scores.shopping_kart.reactor_boost
 execute store result score @s shopping_kart.cruise_control run data get storage shopping_kart:main temp.scores.shopping_kart.cruise_control
+execute store result score @s shopping_kart.collision_factor run data get storage shopping_kart:main temp.scores.shopping_kart.collision_factor
+execute store result score @s shopping_kart.restitution run data get storage shopping_kart:main temp.scores.shopping_kart.restitution
 execute store result score @s switch.temp.compteur run data get storage shopping_kart:main temp.scores.switch.temp.compteur
 
 # Remove invisibility if the entity is the model is not the original shopping kart

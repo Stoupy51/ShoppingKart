@@ -56,11 +56,16 @@ scoreboard objectives add {ns}.old_pos_z dummy
 scoreboard objectives add {ns}.booster_timer dummy
 scoreboard objectives add {ns}.reactor_boost dummy
 scoreboard objectives add {ns}.cruise_control dummy
+scoreboard objectives add {ns}.collision_factor dummy
+scoreboard objectives add {ns}.restitution dummy
 
 scoreboard objectives add {ns}.trigger_model trigger
 scoreboard objectives add {ns}.current_model dummy
 
 scoreboard players set #default_max_engine {ns}.data 1500
+scoreboard players set #default_collision_factor {ns}.data 1000
+scoreboard players set #default_restitution {ns}.data 500
+scoreboard players set #player_lift {ns}.data 0
 
 #define storage {ns}:main
 #define storage {ns}:temp
@@ -88,3 +93,4 @@ scoreboard players set #1000 {ns}.data 1000
 scoreboard players set #10000 {ns}.data 10000
 scoreboard players set #14142 {ns}.data 14142
 """)
+

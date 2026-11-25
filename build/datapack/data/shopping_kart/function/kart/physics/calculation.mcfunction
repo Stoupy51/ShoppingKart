@@ -33,13 +33,15 @@ scoreboard players operation @s shopping_kart.predicted_pos_x = #new_pos_x shopp
 scoreboard players operation @s shopping_kart.predicted_pos_z = #new_pos_z shopping_kart.data
 
 
-## Calculate new motion : motion = (player motion * multiplier) + old_motion + booster
+## Calculate new motion : motion = (player motion * multiplier) + old_motion + booster + collisions
 # If player motion is null : motion = old_motion
 scoreboard players set #booster shopping_kart.data 0
 execute if score #booster shopping_kart.data matches 0 if block ~ ~-1 ~ magenta_glazed_terracotta[facing=west] run scoreboard players set #booster shopping_kart.data 1
 execute if score #booster shopping_kart.data matches 0 if block ~ ~-1 ~ magenta_glazed_terracotta[facing=east] run scoreboard players set #booster shopping_kart.data 2
 execute if score #booster shopping_kart.data matches 0 if block ~ ~-1 ~ magenta_glazed_terracotta[facing=north] run scoreboard players set #booster shopping_kart.data 3
 execute if score #booster shopping_kart.data matches 0 if block ~ ~-1 ~ magenta_glazed_terracotta[facing=south] run scoreboard players set #booster shopping_kart.data 4
+
+execute if score @s shopping_kart.collision_factor matches 1.. run function shopping_kart:kart/physics/collisions
 
 ## Store calculated motion into storage shopping_kart:main Motion[0] & Motion[2]
 data modify storage shopping_kart:main Motion set value [0.0d, 0.0d, 0.0d]

@@ -20,6 +20,8 @@ execute if score #can_fly shopping_kart.data matches 1 run tag @s add shopping_k
 
 # Add kart scoreboard
 scoreboard players operation @s shopping_kart.max_engine = #default_max_engine shopping_kart.data
+scoreboard players operation @s shopping_kart.collision_factor = #default_collision_factor shopping_kart.data
+scoreboard players operation @s shopping_kart.restitution = #default_restitution shopping_kart.data
 scoreboard players set @s shopping_kart.booster_timer 0
 
 # Kart Visual

@@ -1,7 +1,7 @@
 
 # ruff: noqa: E501
 # Imports
-from beet import BlockTag, EntityTypeTag, Predicate
+from beet import Advancement, BlockTag, EntityTypeTag, Predicate
 from stewbeet import Context, JsonDict, set_json_encoder
 
 

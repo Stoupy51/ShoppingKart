@@ -32,6 +32,8 @@ execute store result score @s {ns}.old_pos_z run data get storage {ns}:main temp
 execute store result score @s {ns}.booster_timer run data get storage {ns}:main temp.scores.{ns}.booster_timer
 execute store result score @s {ns}.reactor_boost run data get storage {ns}:main temp.scores.{ns}.reactor_boost
 execute store result score @s {ns}.cruise_control run data get storage {ns}:main temp.scores.{ns}.cruise_control
+execute store result score @s {ns}.collision_factor run data get storage {ns}:main temp.scores.{ns}.collision_factor
+execute store result score @s {ns}.restitution run data get storage {ns}:main temp.scores.{ns}.restitution
 execute store result score @s switch.temp.compteur run data get storage {ns}:main temp.scores.switch.temp.compteur
 
 # Remove invisibility if the entity is the model is not the original shopping kart
@@ -68,6 +70,8 @@ execute store result storage {ns}:main temp.scores.{ns}.old_pos_z int 1 run scor
 execute store result storage {ns}:main temp.scores.{ns}.booster_timer int 1 run scoreboard players get @s {ns}.booster_timer
 execute store result storage {ns}:main temp.scores.{ns}.reactor_boost int 1 run scoreboard players get @s {ns}.reactor_boost
 execute store result storage {ns}:main temp.scores.{ns}.cruise_control int 1 run scoreboard players get @s {ns}.cruise_control
+execute store result storage {ns}:main temp.scores.{ns}.collision_factor int 1 run scoreboard players get @s {ns}.collision_factor
+execute store result storage {ns}:main temp.scores.{ns}.restitution int 1 run scoreboard players get @s {ns}.restitution
 execute store result storage {ns}:main temp.scores.switch.temp.compteur int 1 run scoreboard players get @s switch.temp.compteur
 """)
 
